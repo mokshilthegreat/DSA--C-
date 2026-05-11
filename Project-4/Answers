@@ -1,0 +1,170 @@
+Q1
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+
+    cout << "Enter array size: ";
+    cin >> n;
+
+    int a[n];
+
+    // Input
+    for(int i = 0; i < n; i++) {
+        cout << "a[" << i << "] = ";
+        cin >> a[i];
+    }
+
+    // Output (negative elements)
+    cout << "Negative elements are: ";
+
+    for(int i = 0; i < n; i++) {
+        if(a[i] < 0) {
+            cout << a[i] << " ";
+        }
+    }
+
+    return 0;
+}
+
+Q2
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int r, c;
+
+    cout << "row ";
+    cin >> r;
+
+    cout << "column ";
+    cin >> c;
+
+    int a[r][c];
+
+    for(int i = 0; i < r; i++) {
+        for(int j = 0; j < c; j++) {
+            cout << "a[" << i << "][" << j << "] = ";
+            cin >> a[i][j];
+        }
+    }
+
+    int max = a[0][0];
+
+    for(int i = 0; i < r; i++) {
+        for(int j = 0; j < c; j++) {
+            if(a[i][j] > max) {
+                max = a[i][j];
+            }
+        }
+    }
+
+    cout << "Largest element is: " << max;
+
+    return 0;
+}
+
+
+
+Q3
+#include <iostream>
+using namespace std;
+
+int main() {
+    int r, c;
+
+    cout << "row ";
+    cin >> r;
+
+    cout << "column ";
+    cin >> c;
+
+    int a[r][c];
+
+    for(int i = 0; i < r; i++) {
+        for(int j = 0; j < c; j++) {
+            cout << "a[" << i << "][" << j << "] = ";
+            cin >> a[i][j];
+        }
+    }
+
+  
+  
+  
+
+
+    
+  
+  
+  
+
+  
+    for(int j = 0; j < c; j++) {
+        for(int i = 0; i < r; i++) {
+            cout << a[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+
+
+    return 0;
+}
+
+
+Q4
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int arr[3][3] = {
+        {2, 7, 1},
+        {4, 5, 6},
+        {9, 8, 3}
+    };
+
+    int row, col;
+    int rowSum = 0, colSum = 0;
+
+    cout << "Enter row number: ";
+    cin >> row;
+
+    cout << "Elements of row " << row << ": ";
+
+    for(int j = 0; j < 3; j++) {
+        cout << arr[row][j] << " ";
+
+        if(j < 2) {
+            cout << "+ ";
+        }
+
+        rowSum += arr[row][j];
+    }
+
+    cout << endl;
+    cout << "The sum of a row " << row << " : " << rowSum << endl;
+
+    // ---------------------------
+    cout << "\nEnter column number: ";
+    cin >> col;
+
+    cout << "Elements of column " << col << ": ";
+
+    for(int i = 0; i < 3; i++) {
+        cout << arr[i][col] << " ";
+
+        if(i < 2) {
+            cout << "+ ";
+        }
+
+        colSum += arr[i][col];
+    }
+
+    cout << endl;
+    cout << "The sum of column " << col << " : " << colSum << endl;
+
+    return 0;
+}
