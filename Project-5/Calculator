@@ -1,0 +1,70 @@
+#include <iostream>
+using namespace std;
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int sub(int a, int b) {
+    return a - b;
+}
+
+int mul(int a, int b) {
+    return a * b;
+}
+
+float divi(int a, int b) {
+    return (float)a / b;
+}
+
+int mod(int a, int b) {
+    return a % b;
+}
+
+int main() {
+    int choice, a, b;
+    char ch;
+
+    do {
+        cout << "\n===== Calculator Menu =====\n";
+        cout << "1. Addition (+)\n";
+        cout << "2. Subtraction (-)\n";
+        cout << "3. Multiplication (*)\n";
+        cout << "4. Division (/)\n";
+        cout << "5. Modulus (%)\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        cout << "Enter two numbers: ";
+        cin >> a >> b;
+
+        switch(choice) {
+            case 1:
+                cout << "Result = " << add(a, b);
+                break;
+            case 2:
+                cout << "Result = " << sub(a, b);
+                break;
+            case 3:
+                cout << "Result = " << mul(a, b);
+                break;
+            case 4:
+                if (b != 0)
+                    cout << "Result = " << divi(a, b);
+                else
+                    cout << "Division by zero not allowed!";
+                break;
+            case 5:
+                cout << "Result = " << mod(a, b);
+                break;
+            default:
+                cout << "Invalid choice!";
+        }
+
+        cout << "\nPress 'q' to quit or any other key to continue: ";
+        cin >> ch;
+
+    } while(ch != 'q');
+
+    return 0;
+}
