@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Base Class
 class BankAccount
 {
 protected:
@@ -27,24 +26,18 @@ public:
 
     virtual void withdraw(double amount)
     {
-        if (amount <= balance)
-        {
+        if (amount <= balance){
             balance -= amount;
-            cout << "\nAmount Withdrawn Successfully!";
-        }
-        else
-        {
+            cout << "\nAmount Withdrawn Successfully!";}
+        else{
             cout << "\nInsufficient Balance!";
-        }
-    }
+        }}
 
-    double getBalance()
-    {
+    double getBalance(){
         return balance;
     }
 
-    void setBalance(double bal)
-    {
+    void setBalance(double bal){
         balance = bal;
     }
 
@@ -55,13 +48,10 @@ public:
         cout << "\nBalance        : " << balance << endl;
     }
 
-    virtual void calculateInterest()
-    {
+    virtual void calculateInterest(){
         cout << "\nNo Interest Available";
     }
 };
-
-// Savings Account
 class SavingsAccount : public BankAccount
 {
 private:
@@ -70,8 +60,7 @@ private:
 public:
     SavingsAccount(int accNo, string name,
                    double bal, double rate)
-        : BankAccount(accNo, name, bal)
-    {
+        : BankAccount(accNo, name, bal){
         interestRate = rate;
     }
 
@@ -85,8 +74,6 @@ public:
              << interest << endl;
     }
 };
-
-// Checking Account
 class CheckingAccount : public BankAccount
 {
 private:
@@ -95,27 +82,24 @@ private:
 public:
     CheckingAccount(int accNo, string name,
                     double bal, double limit)
-        : BankAccount(accNo, name, bal)
-    {
+        : BankAccount(accNo, name, bal)  {
         overdraftLimit = limit;
     }
 
     void withdraw(double amount) override
     {
-        if (amount <= (getBalance() + overdraftLimit))
-        {
+        if (amount <= (getBalance() + overdraftLimit)){
             setBalance(getBalance() - amount);
 
             cout << "\nAmount Withdrawn Successfully!";
         }
-        else
-        {
+        else{
             cout << "\nOverdraft Limit Exceeded!";
         }
     }
 };
 
-// Fixed Deposit Account
+ 
 class FixedDepositAccount : public BankAccount
 {
 private:
@@ -227,15 +211,13 @@ int main()
             break;
         }
 
-        case 2:
-        {
+        case 2:  {
             ptr = &c1;
 
             int ch;
             double amount;
 
-            do
-            {
+            do{
                 cout << "\n\n--- Checking Account ---";
 
                 cout << "\n1. Deposit";
@@ -247,8 +229,7 @@ int main()
                 cout << "\n\nEnter Choice : ";
                 cin >> ch;
 
-                switch (ch)
-                {
+                switch (ch){
                 case 1:
                     cout << "\nEnter Amount : ";
                     cin >> amount;
@@ -278,8 +259,7 @@ int main()
             break;
         }
 
-        case 3:
-        {
+        case 3: {
             ptr = &f1;
 
             int ch;
@@ -299,8 +279,7 @@ int main()
                 cout << "\n\nEnter Choice : ";
                 cin >> ch;
 
-                switch (ch)
-                {
+                switch (ch){
                 case 1:
                     cout << "\nEnter Amount : ";
                     cin >> amount;
